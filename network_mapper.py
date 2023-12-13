@@ -1,3 +1,6 @@
+# 拓扑绘制，创建拓扑关系，映射关系，在所有检测到的端口上：
+#   收集计数器。定期执行该脚本来更新网络拓扑。
+#
 import pprint
 import argparse
 import textwrap
@@ -26,7 +29,7 @@ def main_with_args(args):
     Lets go via devices and get data
     '''
     config = configparser.ConfigParser()
-    config.read('config.ini')
+    config.read('config.ini',encoding='utf-8')
     config.sections()
     if 'DEVICES' not in config or 'DEFAULT' not in config:
         log('We failed to load the configuration file, and sections from it, exiting')

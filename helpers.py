@@ -5,7 +5,7 @@ from pyconfig import *
 
 def log(string, severity=3):
     config = configparser.ConfigParser()
-    config.read('config.ini')
+    config.read('config.ini',encoding='utf-8') # error 1st
     config.sections()
     outfile = open(config['DEFAULT']['LogFile'], "a+")
     timestamp = datetime.datetime.now().strftime("%Y %b %d-%H:%M:%S")
